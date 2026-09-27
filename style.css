@@ -1,0 +1,203 @@
+:root {
+  color-scheme: light;
+  --ink: #172536;
+  --muted: #69727c;
+  --line: #d9dde1;
+  --paper: #ffffff;
+  --canvas: #f2f3f4;
+  --gold: #d7b66d;
+  --gold-dark: #9a7935;
+  --income: #167342;
+  --expense: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: #202326;
+  font-family: "Lato", "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+}
+
+header {
+  padding: 22px 32px;
+  background: var(--ink);
+  border-bottom: 3px solid var(--gold);
+  color: var(--paper);
+}
+
+header h1 {
+  max-width: 1160px;
+  margin: 0 auto;
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: 1.65rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.35fr);
+  gap: 24px;
+  max-width: 1224px;
+  margin: 40px auto;
+  padding: 0 32px;
+}
+
+main>section {
+  min-width: 0;
+  padding: 28px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--ink);
+}
+
+main>section:first-child {
+  grid-row: span 2;
+}
+
+h2 {
+  margin: 0 0 24px;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+form p {
+  margin: 0 0 22px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid #bfc5cb;
+  border-radius: 3px;
+  background: var(--paper);
+  color: #202326;
+  font: inherit;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--gold-dark);
+  outline: 3px solid rgb(215 182 109 / 28%);
+}
+
+button {
+  min-height: 50px;
+  padding: 11px 28px;
+  border: 1px solid var(--ink);
+  border-radius: 3px;
+  background: var(--ink);
+  color: #f2d58e;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+button:hover {
+  background: #263b52;
+  color: #ffffff;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+output {
+  display: block;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+main>section:nth-child(2) p {
+  margin: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 13px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  background: #f2f3f4;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+td {
+  color: #454b51;
+}
+
+#entry-list tr.income td:nth-child(3),
+#entry-list tr.income td:nth-child(4) {
+  color: var(--income);
+}
+
+#entry-list tr.expense td:nth-child(3),
+#entry-list tr.expense td:nth-child(4) {
+  color: var(--expense);
+}
+
+td[colspan] {
+  padding: 24px 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  header {
+    padding: 18px 20px;
+  }
+
+  main {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin: 24px auto;
+    padding: 0 16px;
+  }
+
+  main>section:first-child {
+    grid-row: auto;
+  }
+
+  main>section {
+    padding: 22px 18px;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 11px 8px;
+  }
+}
